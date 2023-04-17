@@ -11,7 +11,7 @@ class PageController extends AbstractController
 
     public function index(Request $request): Response
     {
-        $name = $request->get('name', 'sin nombre');
-        return new Response("Bienvenido {$name}.");
+        $search = $request->get('search', "There's nothing to search");
+        return $this->render('index.html.twig', compact('search'));
     }
 }
