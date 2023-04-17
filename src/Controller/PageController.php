@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class PageController extends AbstractController
 {
 
-    public function index(Request $request): Response
+    public function index(Request $request)
     {
         $search = $request->get('search', "There's nothing to search");
         return $this->render('index.html.twig', compact('search'));
