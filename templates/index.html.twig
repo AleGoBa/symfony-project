@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block body%}
-    <h1>You are searching: <b>{{ search }}</b></h1>
+{% block body %}
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <h1>Comentario {{ comment.id }} dice: {{ comment.body }}</h1>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
