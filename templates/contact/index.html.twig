@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Guardar un contacto</h1>
+    {#  form(form, ['post']) #}
+    {% form_theme form 'bootstrap_5_layout.html.twig' %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{form_row(form.email)}}
+        {{form_errors(form.email)}}
+    </div>
+    <div class="form-group">
+        {{form_row(form.message)}}
+        {{form_errors(form.message)}}
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
