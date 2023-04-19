@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+    <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand" href="{{ path('home') }}">
+            <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
+            Symfony/Forms
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('comments_index') }}">Comentarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('contacts_index') }}">Contactos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

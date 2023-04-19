@@ -1,3 +1,13 @@
 home:
     path: /
     controller: App\Controller\PageController::index
+
+contacts_index:
+    path: contacts
+    controller: App\Controller\ContactController::index
+    methods: GET|POST
+
+comments_index:
+    path: comments
+    controller: App\Controller\CommentController::index
+    methods: GET|POST
