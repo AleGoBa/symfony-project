@@ -11,3 +11,19 @@ comments_index:
     path: comments
     controller: App\Controller\CommentController::index
     methods: GET|POST
+
+posts_index:
+    path: posts
+    controller: App\Controller\PostController::index
+    methods: GET
+
+posts_create:
+    path: posts/create
+    controller: App\Controller\PostController::create
+    methods: GET|POST
+
+posts_edit:
+    path: posts/{post}/edit
+    controller: App\Controller\PostController::edit
+    methods: GET|POST
+
