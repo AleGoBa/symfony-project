@@ -1,5 +1,13 @@
 @import 'bootstrap';
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 body {
     background-color: lightgray;
+}
+
+.example-wrapper {
+    margin: 1em auto;
+    max-width: 800px;
+    width: 95%;
+    font: 18px/1.5 sans-serif;
 }

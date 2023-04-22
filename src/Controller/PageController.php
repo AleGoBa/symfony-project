@@ -12,27 +12,8 @@ use App\Form\CommentType;
 class PageController extends AbstractController
 {
 
-    public function index(EntityManagerInterface $entityManager, Request $request)
+    public function index()
     {
-        $form = $this->createForm(CommentType::class);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($form->getData());
-            $entityManager->flush();
-
-            $this->redirectToRoute('home');
-        }
-
-        $comments = $entityManager->getRepository(Comment::class)->findBy([], [
-            'id' => 'desc'
-        ]);
-
-        return $this->render('index.html.twig',
-            [
-                'comments' => $comments,
-                'form' => $form->createView()
-            ]
-        );
+        return $this->render('index.html.twig');
     }
 }

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista de posts</h1>
+    <div class="w-100 text-end my-2">
+        <a class="btn btn-primary float-right w-25 fw-bold" href="{{ path('posts_create') }}">Crear post</a>
+    </div>
+    <table class="table my-2">
+        <thead>
+        <tr class="text-center">
+            <th scope="col">ID</th>
+            <th scope="col">Título</th>
+            <th scope="col">Contenido</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr class="align-middle">
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body | slice(0, 30) ~ (post.body > 30 ? '...' : '')}}</td>
+                <td>{{ post.category.name }}</td>
+                <td class="text-center">
+                    <a class="btn btn-light rounded-circle p-1" href="{{ path('posts_edit', {post: post.id}) }}">
+                        <i class="bi bi-pen-fill"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
